@@ -37,7 +37,7 @@ class ProductData extends Component {
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Product Name</th>
+                        <th>Product Names</th>
                         <th>Product Price</th>
                         <th>Description</th>
                     </tr>
