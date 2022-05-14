@@ -67,7 +67,7 @@ export default class AddProduct extends Component {
                         
 
                         <Button variant="primary" type="submit">
-                            Submit
+                            Submit Product
                         </Button>
                         <BounceLoader loading={this.state.start}></BounceLoader>
                     </Form>
