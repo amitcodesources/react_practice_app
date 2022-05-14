@@ -56,7 +56,6 @@ class ProductData extends Component {
                     
                 </tbody>
                 </table>
-                {/* <BounceLoader className="spin-loader" loading={this.state.load_start}></BounceLoader> */}
             </div>
         )
     }

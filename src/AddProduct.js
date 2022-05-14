@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {BounceLoader,BarLoader,BeatLoader} from 'react-spinners'
+import {BounceLoader} from 'react-spinners'
+import { Form, Button } from 'react-bootstrap'
 
 export default class AddProduct extends Component {
     constructor() {
         super()
-        this.state = { name: 'Bata', price: '10000', description: 'sports' ,start:false}
-        // this.state = { name: '', price: '', description: '' ,start:false}
+        // this.state = { name: 'Bata', price: '10000', description: 'sports' ,start:false}
+        this.state = { name: '', price: '', description: '' ,start:false}
     }
 
     getProductName = (event) => {
@@ -15,12 +16,12 @@ export default class AddProduct extends Component {
 
     }
     getPrice = (event) => {
-        console.log("data", event.target.value)
+        console.log(event.target.value)
         this.setState({ price: event.target.value })
 
     }
     getDescription = (event) => {
-        console.log("data", event.target.value)
+        console.log(event.target.value)
         this.setState({ description: event.target.value })
 
     }
@@ -35,7 +36,9 @@ export default class AddProduct extends Component {
         axios.post("https://justolearnapp.herokuapp.com/api/addproduct", this.state).then(response => {
             console.log("response", response)
             this.setState({start:false})
-            
+            this.setState({name:''})
+            this.setState({price:''})
+            this.setState({description:''})
         }).catch(error => {
             console.log("error", error)
             this.setState({start:false})
@@ -45,52 +48,30 @@ export default class AddProduct extends Component {
 
   render() {
     return (
-            <div>
-                        <form >
+                <div className='container w-25 mt-5'>
+                    <Form onSubmit={this.onSubmitHandle}>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Enter Product Name</Form.Label>
+                            <Form.Control type="text" value={this.state.name} onChange={this.getProductName} />
+                        </Form.Group>
 
-                        <div class="container">
+                        <Form.Group className="mb-3">
+                            <Form.Label>Enter Product Price</Form.Label>
+                            <Form.Control type="text" value={this.state.price} onChange={this.getPrice} />
+                        </Form.Group>
 
-                            <div>
-                                <label>Enter Your Name</label>
-                                <input onChange={this.getProductName} type="text" value={this.state.name} placeholder="enter product  name"></input>
-                            </div>
-                            <div>
-                                <label>Enter Your email</label>
-                                <input onChange={this.getPrice} type="text" value={this.state.price} placeholder="enter product  price"></input>
-                                {this.state.userName}
-                            </div>
+                        <Form.Group className="mb-3">
+                            <Form.Label>Enter Product Description</Form.Label>
+                            <Form.Control type="text" value={this.state.description} onChange={this.getDescription} />
+                        </Form.Group>
+                        
 
-                            <div>
-                                <label>Enter Your Phone No</label>
-                                <input onChange={this.getDescription} type="password" value={this.state.description} placeholder="enter product decription"></input>
-                                {this.state.userName}
-                            </div>
-
-                            <button className="btn btn-primary" type="submit">Submit</button>
-                            <BounceLoader loading={this.state.start}></BounceLoader>
-                        </div>
-                        </form>
-            </div>
-
-
-                // <div className='container w-25 mt-5'>
-                // <Form onSubmit={this.onSubmitHandle}>
-                //     <Form.Group className="mb-3" controlId="formBasicEmail">
-                //         <Form.Label>Enter Your Name</Form.Label>
-                //         <Form.Control type="text" onChange={this.getProductName} />
-                //     </Form.Group>
-
-                //     <Form.Group className="mb-3" controlId="formBasicPassword">
-                //         <Form.Label>Password</Form.Label>
-                //         <Form.Control type="password" placeholder="Password" />
-                //     </Form.Group>
-                    
-
-                //     <Button variant="primary" type="submit">
-                //         Submit
-                //     </Button>
-                // </Form>
-                // </div>
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                        <BounceLoader loading={this.state.start}></BounceLoader>
+                    </Form>
+                </div>
     )
   }
 }
