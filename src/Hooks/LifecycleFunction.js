@@ -11,7 +11,7 @@ function LifecycleFunction(props) {
 
     return (
         <div>
-            LifecycleFunction 
+            <h1>Use Effect Lifecycle Function</h1>  
         </div>
     );
 }

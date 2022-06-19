@@ -9,9 +9,9 @@ class CounterClass extends Component {
     render() {
         return (
             <div>
-                <h1>Use State </h1>
+                <h1>Use State Counter Class</h1>
                 <p>Count: {this.state.count}</p>
-                <button class="btn btn-primary" onClick={() => this.setState({
+                <button className="btn btn-primary" onClick={() => this.setState({
                     count: this.state.count + 1
                 })}>Increase by 1</button>
             </div>

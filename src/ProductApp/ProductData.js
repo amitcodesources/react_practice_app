@@ -7,7 +7,8 @@ class ProductData extends Component {
         super();
         this.state = {
             products: [],
-            load_start:true
+            load_start:true,
+            error: ''
         };
     }
 

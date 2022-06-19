@@ -12,7 +12,7 @@ class LifecycleClass extends Component {
     render() {
         return (
             <div>
-               LifecycleClass 
+               <h1>Use Effect Lifecycle Class</h1> 
             </div>
         );
     }

@@ -13,17 +13,14 @@ export default class AddProduct extends Component {
     getProductName = (event) => {
         console.log("data", event.target.value)
         this.setState({ name: event.target.value })
-
     }
     getPrice = (event) => {
         console.log(event.target.value)
         this.setState({ price: event.target.value })
-
     }
     getDescription = (event) => {
         console.log(event.target.value)
         this.setState({ description: event.target.value })
-
     }
 
     onSubmitHandle = (event) => {
