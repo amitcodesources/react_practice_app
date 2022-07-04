@@ -1,17 +1,18 @@
 
 
-// import Login from './ProductApp/Login';
-// import DashboardProduct from './ProductApp/DashboardProduct';
-// import ProtectedRoutes from './ProductApp/ProtectedRoutes';
-// import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-// import Home from './ProductApp/Home';
-// import AboutProduct from './ProductApp/AboutProduct';
-// import AddProduct from './ProductApp/AddProduct';
-// import ProductData from './ProductApp/ProductData';
-// import ContactUs from './ProductApp/ContactUs';
-// import PageNotFound from './ProductApp/PageNotFound';
+import Login from './ProductApp/Login';
 
-import CKEditor from "./Examples/CKEditor";
+// import ProtectedRoutes from './ProductApp/ProtectedRoutes';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import DashboardProduct from './ProductApp/DashboardProduct';
+import Home from './ProductApp/Home';
+import AboutProduct from './ProductApp/AboutProduct';
+import AddProduct from './ProductApp/AddProduct';
+import ProductData from './ProductApp/ProductData';
+import ContactUs from './ProductApp/ContactUs';
+import PageNotFound from './ProductApp/PageNotFound';
+
+
 
 
 // import PassDataParentToChild from './PassDataParentToChild';
@@ -19,11 +20,25 @@ import CKEditor from "./Examples/CKEditor";
 // import BankTransaction from './BankTransaction';
 // import MainHooksComp from './Hooks/MainHooksComp';
 // import MainFormComp from './FormsExapmles/MainFormComp';
+import MainExamplesComp from './Examples/MainExamplesComp';
 
 
 function App() {
   return (
     <>
+      {/* <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route exact path="dashboard" element={<DashboardProduct />} />
+          <Route exact path="home" element={<Home />} />
+          <Route exact path="about" element={<AboutProduct />} />
+          <Route exact path="addproduct" element={<AddProduct />} />
+          <Route exact path="showproduct" element={<ProductData />} />
+          <Route exact path="contact" element={<ContactUs />} />
+          <Route exact path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter> */}
+
       {/* <BrowserRouter>
         <Routes>
           <Route path="/login" element={<Login />} />
@@ -39,6 +54,7 @@ function App() {
           </ProtectedRoutes>
         </Routes>
       </BrowserRouter> */}
+
     {/* <DashboardProduct/> */}
     
     
@@ -53,8 +69,7 @@ function App() {
 
     {/* <MainHooksComp/> */}
     {/* <MainFormComp /> */}
-
-    <CKEditor/>
+    <MainExamplesComp />
 
     </>
   );

@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 import { Navbar, Nav, Container } from 'react-bootstrap';
-import { NavLink, Navigate } from 'react-router-dom';
-// import { Navigate, Routes, Route } from 'react-router-dom'
-// import Home from './Home';
-// import AboutProduct from './AboutProduct';
-// import AddProduct from './AddProduct';
-// import ProductData from './ProductData';
-// import ContactUs from './ContactUs';
-// import PageNotFound from './PageNotFound';
-// import ProtectedRoutes from './ProtectedRoutes';
+import { NavLink } from 'react-router-dom';
 
 export default class DashboardProduct extends Component {
     constructor(props) {
@@ -18,17 +10,7 @@ export default class DashboardProduct extends Component {
         };
     }
 
-    signOut = () => {
-        localStorage.removeItem("user_token");
-        this.setState({
-            islogout: true
-        });
-    };
-
     render() {
-        if (this.state.islogout) {
-            return <Navigate to="/login" />;
-          }
         return (
             <>
                 <Navbar bg="light" expand="lg">
@@ -54,24 +36,11 @@ export default class DashboardProduct extends Component {
                                 <NavLink to="/contact">
                                     ContactUs
                                 </NavLink>
-
-                                <NavLink className="btn btn-primary" onClick={this.signOut}>
-                                    SignOut
-                                </NavLink>
                             </Nav>
                         </Navbar.Collapse>
                     </Container>
                 </Navbar>
-
-        {/* <Routes>
-            <Route exact path="home" element={<Home />} />
-            <Route exact path="about" element={<AboutProduct />} />
-            <Route exact path="addproduct" element={<AddProduct />} />
-            <Route exact path="showproduct" element={<ProductData />} />
-            <Route exact path="contact" element={<ContactUs />} />
-            <Route exact path="*" element={<PageNotFound />} />
-        </Routes> */}
-</>
+            </>
         );
     }
 }

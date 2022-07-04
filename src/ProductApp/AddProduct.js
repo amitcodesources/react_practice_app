@@ -3,9 +3,11 @@ import axios from 'axios'
 import {BounceLoader} from 'react-spinners'
 import { Form, Button } from 'react-bootstrap'
 
-export default class AddProduct extends Component {
-    constructor() {
-        super()
+import { WithRouter } from './WithRouter';
+
+class AddProduct extends Component {
+    constructor(props) {
+        super(props)
         // this.state = { name: 'Bata', price: '10000', description: 'sports' ,start:false}
         this.state = { name: '', price: '', description: '' ,start:false}
     }
@@ -73,4 +75,6 @@ export default class AddProduct extends Component {
   }
 }
 
+
+export default WithRouter(AddProduct);
 

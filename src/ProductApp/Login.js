@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Form } from 'react-bootstrap';
-import { Navigate } from 'react-router-dom';
+import { WithRouter } from './WithRouter';
  
-export default class Login extends Component {
+class Login extends Component {
     handleFormSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.target);
@@ -10,16 +10,13 @@ export default class Login extends Component {
     const user_password = data.get('user_password');
     if (user_id === "admin" && user_password === "123") {
         sessionStorage.setItem('user_token','ABC123');
-        return <Navigate to="/dashboard" /> 
+        this.props.navigate('/dashboard')
     } else {
         console.log('error');
     }
 
 };
   render() {
-    if (sessionStorage.getItem("user_token")) {
-        return <Navigate to="/dashboard" />;
-    }
 
     return (
         <div className='container w-25 mt-5'>
@@ -47,5 +44,8 @@ export default class Login extends Component {
     )
   }
 }
+
+
+export default WithRouter(Login);
 
 
