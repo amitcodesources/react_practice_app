@@ -1,7 +1,9 @@
 import React from 'react'
+import Spinners from './Spinners'
 // import CkEditorExampleComponent from './CkEditorExampleComponent'
 // import Htmltotext from './Htmltotext'
-import IndianStateRegionSelectDropdown from './CountryRegionSelectorDropdown'
+// import IndianStateRegionSelectDropdown from './CountryRegionSelectorDropdown'
+// import PasswordToggle from './PasswordToggle'
 
 export default function MainExamplesComp() {
   return (
@@ -9,7 +11,9 @@ export default function MainExamplesComp() {
 
         {/* <CkEditorExampleComponent /> */}
         {/* <Htmltotext /> */}
-        <IndianStateRegionSelectDropdown />
+        {/* <IndianStateRegionSelectDropdown /> */}
+        {/* <PasswordToggle /> */}
+        <Spinners />
     </div>
   )
 }

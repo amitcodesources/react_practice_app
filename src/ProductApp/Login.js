@@ -3,19 +3,20 @@ import { Button, Form } from 'react-bootstrap';
 import { WithRouter } from './WithRouter';
  
 class Login extends Component {
-    handleFormSubmit = event => {
-    event.preventDefault();
-    const data = new FormData(event.target);
-    const user_id = data.get('user_id');
-    const user_password = data.get('user_password');
-    if (user_id === "admin" && user_password === "123") {
-        sessionStorage.setItem('user_token','ABC123');
-        this.props.navigate('/dashboard')
-    } else {
-        console.log('error');
-    }
 
-};
+    handleFormSubmit = event => {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const user_id = data.get('user_id');
+        const user_password = data.get('user_password');
+        if (user_id === "admin" && user_password === "123") {
+            sessionStorage.setItem('user_token','ABC123');
+            this.props.navigate('/dashboard')
+        } else {
+            console.log('error');
+        }
+    };
+
   render() {
 
     return (

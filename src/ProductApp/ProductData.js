@@ -18,10 +18,11 @@ class ProductData extends Component {
                     this.setState({
                         products: response.data.result,
                         load_start:false
-                    }).catch(error => {
+                    })
+                })
+                .catch(error => {
                         console.log("error", error)
                         this.setState({load_start:false})
-                    });
                 });
     }
 
@@ -30,8 +31,8 @@ class ProductData extends Component {
         // console.log(this.state.products);
         return(
             <div>
-                <div className="spin-loader">
-                    <BounceLoader loading={this.state.load_start}></BounceLoader>
+                <div className="position-absolute top-50 start-50 translate-middle">
+                    <BounceLoader cssOverride={{"position": "absolute", "top": "50%" }} speedMultiplier={2} loading={this.state.load_start}></BounceLoader>
                 </div>
                 
                 <table className='table table-striped'>

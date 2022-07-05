@@ -1,9 +1,8 @@
 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Login from './ProductApp/Login';
-
-// import ProtectedRoutes from './ProductApp/ProtectedRoutes';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProtectedRoutes from './ProductApp/ProtectedRoutes';
 import DashboardProduct from './ProductApp/DashboardProduct';
 import Home from './ProductApp/Home';
 import AboutProduct from './ProductApp/AboutProduct';
@@ -20,40 +19,27 @@ import PageNotFound from './ProductApp/PageNotFound';
 // import BankTransaction from './BankTransaction';
 // import MainHooksComp from './Hooks/MainHooksComp';
 // import MainFormComp from './FormsExapmles/MainFormComp';
-import MainExamplesComp from './Examples/MainExamplesComp';
+// import MainExamplesComp from './Examples/MainExamplesComp';
 
 
 function App() {
+  let token = sessionStorage.getItem('user_token');
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
-          <Route exact path="dashboard" element={<DashboardProduct />} />
-          <Route exact path="home" element={<Home />} />
-          <Route exact path="about" element={<AboutProduct />} />
-          <Route exact path="addproduct" element={<AddProduct />} />
-          <Route exact path="showproduct" element={<ProductData />} />
-          <Route exact path="contact" element={<ContactUs />} />
-          <Route exact path="*" element={<PageNotFound />} />
+          <Route path="/" element={token ? <DashboardProduct /> : <Login /> } />
+          <Route path="/dashboard" element={<ProtectedRoutes Comp={DashboardProduct} />} />
+          <Route path="/" element={<ProtectedRoutes Comp={DashboardProduct} />} >
+            <Route exact path="home" element={<Home/>} />
+            <Route exact path="about" element={<AboutProduct />} />
+            <Route exact path="addproduct" element={<AddProduct />} />
+            <Route exact path="showproduct" element={<ProductData />} />
+            <Route exact path="contact" element={<ContactUs />} />
+            <Route exact path="*" element={<PageNotFound />} />
+          </Route>
         </Routes>
-      </BrowserRouter> */}
-
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <ProtectedRoutes path="/dashboard" element={<DashboardProduct />} >
-          <Route exact path="/" element={<Navigate from="/" to="dashboard" replace />} />
-          <Route exact path="*" element={<Navigate from="/" to="dashboard" replace />} />
-          <Route exact path="home" element={<Home />} />
-          <Route exact path="about" element={<AboutProduct />} />
-          <Route exact path="addproduct" element={<AddProduct />} />
-          <Route exact path="showproduct" element={<ProductData />} />
-          <Route exact path="contact" element={<ContactUs />} />
-          <Route exact path="*" element={<PageNotFound />} />
-          </ProtectedRoutes>
-        </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
 
     {/* <DashboardProduct/> */}
     
@@ -69,7 +55,7 @@ function App() {
 
     {/* <MainHooksComp/> */}
     {/* <MainFormComp /> */}
-    <MainExamplesComp />
+    {/* <MainExamplesComp /> */}
 
     </>
   );
