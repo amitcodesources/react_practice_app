@@ -1,19 +1,38 @@
-import React from 'react'
-import Spinners from './Spinners'
 // import CkEditorExampleComponent from './CkEditorExampleComponent'
 // import Htmltotext from './Htmltotext'
 // import IndianStateRegionSelectDropdown from './CountryRegionSelectorDropdown'
 // import PasswordToggle from './PasswordToggle'
+// import Spinners from './Spinners'
+// import ModalComp from './ModalComp'
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import Details from "./Details";
+// import UserFormPassDataInRouterLink from "./UserFormPassDataInRouterLink";
+// import DataPassThroughProps from "./DataPassThroughProps";
+// import HighChartsApp from "./HighChartsApp";
+import HighChartOfficial from "./HighChartOfficial";
 
 export default function MainExamplesComp() {
   return (
-    <div className='container w-25 mt-5'>
+    <div className='container w-50 mt-5'>
 
         {/* <CkEditorExampleComponent /> */}
         {/* <Htmltotext /> */}
         {/* <IndianStateRegionSelectDropdown /> */}
         {/* <PasswordToggle /> */}
-        <Spinners />
+        {/* <Spinners /> */}
+        {/* <ModalComp /> */}
+
+        {/* <BrowserRouter>
+        <Routes>
+            <Route path="/" exact element={<UserFormPassDataInRouterLink /> } />
+            <Route path="/details" exact element={<Details /> } />
+        </Routes>
+      </BrowserRouter> */}
+
+      {/* <DataPassThroughProps data={{name:"Amit", age:25}} /> */}
+        {/* <HighChartsApp /> */}
+
+        <HighChartOfficial/>
     </div>
   )
 }

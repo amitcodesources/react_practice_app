@@ -1,15 +1,17 @@
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Login from './ProductApp/Login';
-import ProtectedRoutes from './ProductApp/ProtectedRoutes';
-import DashboardProduct from './ProductApp/DashboardProduct';
-import Home from './ProductApp/Home';
-import AboutProduct from './ProductApp/AboutProduct';
-import AddProduct from './ProductApp/AddProduct';
-import ProductData from './ProductApp/ProductData';
-import ContactUs from './ProductApp/ContactUs';
-import PageNotFound from './ProductApp/PageNotFound';
+// import ReduxApp from "./ReduxEx/ReduxApp";
+
+// import Login from './ProductApp/Login';
+// import ProtectedRoutes from './ProductApp/ProtectedRoutes';
+// import DashboardProduct from './ProductApp/DashboardProduct';
+// import Home from './ProductApp/Home';
+// import AboutProduct from './ProductApp/AboutProduct';
+// import AddProduct from './ProductApp/AddProduct';
+// import ProductData from './ProductApp/ProductData';
+// import ContactUs from './ProductApp/ContactUs';
+// import PageNotFound from './ProductApp/PageNotFound';
 
 
 
@@ -19,14 +21,14 @@ import PageNotFound from './ProductApp/PageNotFound';
 // import BankTransaction from './BankTransaction';
 // import MainHooksComp from './Hooks/MainHooksComp';
 // import MainFormComp from './FormsExapmles/MainFormComp';
-// import MainExamplesComp from './Examples/MainExamplesComp';
+import MainExamplesComp from './Examples/MainExamplesComp';
 
 
 function App() {
-  let token = sessionStorage.getItem('user_token');
+  // let token = sessionStorage.getItem('user_token');
   return (
     <>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
           <Route path="/" element={token ? <DashboardProduct /> : <Login /> } />
           <Route path="/dashboard" element={<ProtectedRoutes Comp={DashboardProduct} />} />
@@ -39,7 +41,7 @@ function App() {
             <Route exact path="*" element={<PageNotFound />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
 
     {/* <DashboardProduct/> */}
     
@@ -55,7 +57,9 @@ function App() {
 
     {/* <MainHooksComp/> */}
     {/* <MainFormComp /> */}
-    {/* <MainExamplesComp /> */}
+    <MainExamplesComp />
+
+    {/* <ReduxApp /> */}
 
     </>
   );
