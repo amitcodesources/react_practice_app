@@ -3,8 +3,6 @@ import axios from 'axios'
 import {BounceLoader} from 'react-spinners'
 import { Form, Button } from 'react-bootstrap'
 
-import { WithRouter } from './WithRouter';
-
 class AddProduct extends Component {
     constructor(props) {
         super(props)
@@ -76,5 +74,5 @@ class AddProduct extends Component {
 }
 
 
-export default WithRouter(AddProduct);
+export default AddProduct;
 

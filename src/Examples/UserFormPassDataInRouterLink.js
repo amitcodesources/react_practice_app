@@ -16,8 +16,8 @@ const UserFormPassDataInRouterLink = (props) => {
 
     const handleSubmit = e => {
         e.preventDefault();
-        // navigate('/details', {state:{data: userdata}} )
-        navigate('/details', {state:userdata} )
+        // navigate('/details', {state:userdata} )
+        navigate('/details', {state:{data: userdata}} )
     }
 
     const handleInputChange = event => {

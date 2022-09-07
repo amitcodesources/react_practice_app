@@ -3,7 +3,8 @@ import {useLocation} from 'react-router-dom';
 
 const Details = (props) => {
     const location = useLocation();  
-    const { username, email, city, phone } = location.state;
+    // const { username, email, city, phone } = location.state;
+    const { username, email, city, phone } = location.state.data;
     console.log(location.state)
   return (
     <div>

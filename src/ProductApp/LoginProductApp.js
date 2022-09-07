@@ -1,27 +1,27 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Button, Form } from 'react-bootstrap';
-import { WithRouter } from './WithRouter';
- 
-class Login extends Component {
+import { useNavigate } from 'react-router-dom';
 
-    handleFormSubmit = event => {
+const LoginProductApp = () => {
+
+    const navigate = useNavigate();
+
+    const handleFormSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.target);
         const user_id = data.get('user_id');
         const user_password = data.get('user_password');
         if (user_id === "admin" && user_password === "123") {
-            sessionStorage.setItem('user_token','ABC123');
-            this.props.navigate('/dashboard')
+            sessionStorage.setItem('user_token', 'ABC123');
+            navigate('/dashboard')
         } else {
             console.log('error');
         }
     };
 
-  render() {
-
     return (
         <div className='container w-25 mt-5'>
-            <Form onSubmit={this.handleFormSubmit}>
+            <Form onSubmit={handleFormSubmit}>
 
                 <Form.Group className="mb-3">
                     <Form.Label>Email address</Form.Label>
@@ -43,10 +43,8 @@ class Login extends Component {
             <p>user_id === "admin" && user_password === "123"</p>
         </div>
     )
-  }
 }
 
-
-export default WithRouter(Login);
+export default LoginProductApp
 
 

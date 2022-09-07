@@ -7,11 +7,6 @@ function ProtectedRoutes(props) {
       const navigate = useNavigate();
       useEffect(() =>{
           let token = sessionStorage.getItem('user_token');
-          // if(token){
-          //   navigate('/dashboard');
-          // } else {
-          //   navigate('/login');
-          // }
           if(!token){
             navigate('/login');
           }

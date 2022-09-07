@@ -1,26 +1,23 @@
-import React, { Component } from 'react'
-import { Outlet } from 'react-router-dom';
+import React, { useEffect } from 'react'
 import HeaderNavComp from './HeaderNavComp';
+import { Outlet } from 'react-router-dom';
+const DashboardProduct = () => {
 
-
-export default class DashboardProduct extends Component {
-
-    componentDidMount(){
-        let isAuth = localStorage.getItem('user_token')
+    useEffect(() =>{
+        let isAuth = localStorage.getItem('userToken')
         if(isAuth & isAuth !== 'undefined') {
             this.props.navigate('/dashboard');   
         }
-    }
-    
-    render() {
-        return (
-            <>
-                <HeaderNavComp />
-                <div className='container'>
-                    <Outlet />
-                </div>
-            </>
-        );
-    }
+  });
+
+    return (
+        <>
+            <HeaderNavComp />
+            <div className='container'>
+                <Outlet />
+            </div>
+        </>
+    )
 }
 
+export default DashboardProduct

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useCallback } from 'react'
 var funccount = new Set();
 export default function Hooks_useCallBack() {
 
@@ -33,8 +33,8 @@ export default function Hooks_useCallBack() {
         
         
 
-        const [count, setCount] = React.useState(0)
-        const [number, setNumber] = React.useState(0)
+        const [count, setCount] = useState(0)
+        const [number, setNumber] = useState(0)
 
         // const incrementCounter = () => {
         //     setCount(count + 1)
@@ -48,13 +48,13 @@ export default function Hooks_useCallBack() {
         //   }
 
 
-          const incrementCounter = React.useCallback(() => {
+          const incrementCounter = useCallback(() => {
             setCount(count + 1)
           }, [count])
-          const decrementCounter = React.useCallback(() => {
+          const decrementCounter = useCallback(() => {
             setCount(count - 1)
           }, [count])
-          const incrementNumber = React.useCallback(() => {
+          const incrementNumber = useCallback(() => {
             setNumber(number + 1)
           }, [number])
            
